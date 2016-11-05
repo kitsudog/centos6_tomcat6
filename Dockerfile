@@ -12,6 +12,7 @@ RUN mkdir $TOMCAT_HOME && curl -sSL \
     http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz | \
     tar zxv -C $TOMCAT_HOME --strip-components 1
 
+ENV JSSE_OPTS="-Dfile.encoding=utf-8 "
 WORKDIR ${TOMCAT_HOME}/bin
 EXPOSE 8080
 ENTRYPOINT ["./catalina.sh"]
