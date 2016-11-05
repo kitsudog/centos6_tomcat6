@@ -14,5 +14,5 @@ RUN mkdir $TOMCAT_HOME && curl -sSL \
 
 WORKDIR ${TOMCAT_HOME}/bin
 EXPOSE 8080
-ENTRYPOINT ["${TOMCAT_HOME}/bin/catalina.sh"]
+ENTRYPOINT ["./catalina.sh"]
 CMD ["run"]
