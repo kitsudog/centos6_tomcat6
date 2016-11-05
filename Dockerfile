@@ -9,5 +9,6 @@ RUN mkdir $TOMCAT_HOME && curl -sSL \
     tar zxv -C $TOMCAT_HOME --strip-components 1
 
 WORKDIR ${TOMCAT_HOME}/bin
+EXPOSE 8080
 ENTRYPOINT ["${TOMCAT_HOME}/bin/catalina.sh"]
 CMD ["run"]
