@@ -5,6 +5,7 @@ ENV TOMCAT_VERSION=6.0.47
 ENV TOMCAT_HOME=/opt/tomcat
 
 RUN yum install -y \
+        mysql-server \
         mysql
 
 RUN mkdir $TOMCAT_HOME && curl -sSL \
