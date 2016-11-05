@@ -7,3 +7,7 @@ ENV TOMCAT_HOME=/opt/tomcat
 RUN mkdir $TOMCAT_HOME && curl -sSL \
     http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz | \
     tar zxv -C $TOMCAT_HOME --strip-components 1
+
+WORKDIR ${TOMCAT_HOME}/bin
+ENTRYPOINT ["${TOMCAT_HOME}/bin/catalina.sh"]
+CMD ["run"]
